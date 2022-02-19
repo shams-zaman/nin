@@ -60,62 +60,66 @@
 
                   
  <!--  ************************* About Us Starts Here ************************** -->    
-{{-- <section mt-4 id="about_us"  class="container-fluid about-us>      --}}
+
+    
 <div id="about_us" class="about-us m-2 container-fluid">
     <div id="" class="container">
 
         <div  class="row natur-row no-margin w-100">
-            <div class="text-part col-md-6">
-                <h2>About Our Charity</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius faucibus
-                    ligula non congue. Suspendisse at pretium massa, sit amet
-                    vulputate nibh. Nam posuere eros dolor. Donec vel arcu sagittis, pretium nisl </p>
-                <p> Cras faucibus laoreet nibh, sit amet tincidunt leo mollis in. Etiam eu mauris metus.
-                    Nulla facilisi. Etiam vestibulum,
-                    nisi et convallis elementum, leo orci aliquam metus, id posuere massa neque vitae
-                    arcu.</p>
+            <div class="text-part col-md-8">
+                                        <h2>About Us</h2>
+                                    Hi,<br> It's good to have you here, I believe you are curious to know what brings up this idea,
+                        Yes, an idea that comes into existence is born for a reason,<br><br>
 
-                <p>Integer vulputate vehicula dolor a eleifend. Duis aliquam condimentum sapien,
-                    eget tempor justo. Aenean porttitor nibh metus, sollicitudin egestas metus posuere et
-                    . Fusce egestas volutpat metus, in sodales sem bibendum porta. Nunc hendrerit nunc sit
-                    amet tellus posuere, at malesuada sem gravida. Integer maximus ultricies augue, at
-                    dapibus elit bibendum consequat. Cras faucibus tellus eleifend, fermentum purus in,
-                    dapibus sapien. Praesent nec ornare risus. Etiam iaculis, ligula vel gravida
-                    vestibulum, urna justo posuere ante,
-                    id pretium massa arcu sed mi. Nunc a sollicitudin sem. Duis tempus </p>
+                        <b>All Glory to God Almighty.</b> <br>
+
+                        I am Adaramaja Joshua the founder and CEO of NIS [New investment scheme] networking enterprise, Here with my family and colleagues who made this a reality, and mostly to my developer who is now my best partner on this I appreciate you all.
+                        <p>I have always been purposely driven every day of my life focusing on how to make an impact in the world we live in, One thing I believe and would always believe is that God has a plan for me, as he had plans for everyone as well. <br>
+
+                        Life must not decide for me, I choose to decide, I have tried a lot of things which doesn't work out to what I want and makes me remain stagnant. <br>
+                         <b>One faithful day a young and Great lady introduce me to a great business idea, this business changes my entire life</b>  I feel amazed to know about this I discover this is the beginning of my journey in life. This is where I derived this great opportunity from. <br> <br>
+                         <b>  All thanks to EDUCATION, Mostly to ADEYEMI UNIVERSITY OF EDUCATION ONDO,</b>
+                        This idea came to light where I discovered students can actually focus on their education and at the same time they would be financially free in the easiest way possible without going through any additional stress. <br>
+                        Studying Enough is stressful, having a part-time job, working day and night without rest is a big concern, and all this is all about yourself alone, when will you have time for the future or the person beside you. <br> <br>
+                        <b>We look forward to reducing this stress and focusing more on making the world a better place.</b> <br>  <br><br>
+
+
+
+
+            
             </div>
-            <div class="image-part col-md-6">
+            <div class="image-part col-md-4">
                 <div class="about-quick-box row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="about-qcard">
                            <i class="fas fa-user"></i>
-                            <p>Start Income from 1st month!</p>
+                            <p>Becom a Volunteer</p>
                         </div>
                     </div>
-                     <div class="col-md-6">
+                     <div class="col-md-12">
                         <div class="about-qcard ">
                            <i class="fas fa-search-dollar red"></i>
-                            <p>25% On Referral</p>
+                            <p>Quick Fundrais</p>
                         </div>
                     </div>
-                     <div class="col-md-6">
+                     <div class="col-md-12">
                         <div class="about-qcard ">
                            <i class="fas fa-donate yell"></i>
-                            <p>Start from Only 1000#</p>
+                            <p>Giv Donation</p>
                         </div>
                     </div>
-                     <div class="col-md-6">
+                     <div class="col-md-12">
                         <div class="about-qcard ">
                            <i class="fas fa-hands-helping blu"></i>
-                            <p>Attractive Bonus</p>
+                            <p>Help Someone</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>    
-{{-- </section>    --}}
+</div>
+
    
    
     
@@ -135,67 +139,7 @@
     
     <!-- ################# Our Blog Starts Here#######################--->
 
-    <section class="our-blog">
-         	<div class="container">
-         		<div class="row session-title">
-        			<h2> Our Blog </h2>
-        			<p>Take a look at what people say about US </p>
-        		</div>
-        		<div class="blog-row row">
-        			<div class="col-md-4 col-sm-6">
-        				<div class="single-blog">
-        					<figure>
-        						<img src="{{asset('frontend/assets/images/events/image_01.jpg')}}" alt="">
-        					</figure>
-        					<div class="blog-detail">
-        						<small>By Admin | August 10 2018</small>
-								<h4>Methods of Recuirtments</h4>
-								<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
-								<div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div>
-        					</div>
-        					
-        					
-        				</div>
-        			</div>
-        			<div class="col-md-4 col-sm-6">
-        				<div class="single-blog">
-        					<figure>
-        						<img src="{{asset('frontend/assets/images/events/image_02.jpg')}}" alt="">
-        					</figure>
-        					<div class="blog-detail">
-        						<small>By Admin | August 10 2018</small>
-								<h4>Methods of Recuirtments</h4>
-								<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
-								<div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div>
-        					</div>
-        					
-        					
-        				</div>
-        			</div>
-        			<div class="col-md-4 col-sm-6">
-        				<div class="single-blog">
-        					<figure>
-        						<img src="{{asset('frontend/assets/images/events/image_03.jpg')}}" alt="">
-        					</figure>
-        					<div class="blog-detail">
-        						<small>By Admin | August 10 2018</small>
-								<h4>Methods of Recuirtments</h4>
-								<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
-								<div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div>
-        					</div>
-        					
-        					
-        				</div>
-        			</div>
-        		</div>
-         	</div>
-         </section>
+   
 
 
          @include('frontend.layout.footer')                 

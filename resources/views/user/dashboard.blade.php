@@ -1,7 +1,180 @@
 @extends('layouts.backend.app')
 
 @section('content')
-<div class="container">
+@if(Auth::user()->getProfile->isActive==0)
+<h1>
+    You havn't paid the monthly premium yet;
+    </h1> 
+
+
+@else
+<div class="row justify-content-md-center">
+
+    
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-light bg-dark  shadow-sm">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                
+                 
+                        <div class="align-items-center">
+                            <h2 style="color: white" class="h5">Total Downline:</h2>
+                            {{-- <h2 class="h6">this Month </h2> --}}
+
+                            <h3  style="color: white" class="mb-1">{{$tMyDowns}}</h3>
+                        </div>
+                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
+                        <div class="small mt-2">                               
+                           
+                        </div>
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-light bg-dark  shadow-sm">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                
+                 
+                        <div class="align-items-center">
+                            <h2 style="color: white" class="h5">Active Downline:</h2>
+                            {{-- <h2 class="h6">this Month </h2> --}}
+
+                            <h3  style="color: white" class="mb-1">{{$aMyDowns}}</h3>
+                        </div>
+                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
+                        <div class="small mt-2">                               
+                           
+                        </div>
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-light bg-dark  shadow-sm">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                
+                 
+                        <div class="align-items-center">
+                            <h2 style="color: white" class="h5">Wallet</h2>
+                            {{-- <h2 class="h6">this Month </h2> --}}
+
+                            <h3  style="color: white" class="mb-1">{{$wallet}}</h3>
+                        </div>
+                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
+                        <div class="small mt-2">                               
+                           
+                        </div>
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-light bg-dark  shadow-sm">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                
+                 
+                        <div class="align-items-center">
+                            <h2 style="color: white" class="h5">Rank</h2>
+                            {{-- <h2 class="h6">this Month </h2> --}}
+
+                            <h3  style="color: white" class="mb-1">{{$rank}}</h3>
+                        </div>
+                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
+                        <div class="small mt-2">                               
+                           
+                        </div>
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-light bg-dark  shadow-sm">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                
+                 
+                        <div class="align-items-center">
+                            <h2 style="color: white" class="h5">Previous Bonus</h2>
+                            {{-- <h2 class="h6">this Month </h2> --}}
+
+                            <h3  style="color: white" class="mb-1">{{$prevBonus}}</h3>
+                        </div>
+                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
+                        <div class="small mt-2">                               
+                           
+                        </div>
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-12 col-sm-6 col-xl-4 mb-4">
+        <div class="card border-light bg-dark  shadow-sm">
+            <div class="card-body">
+                <div class="row d-block d-xl-flex align-items-center">
+                
+                 
+                        <div class="align-items-center">
+                            <h2 style="color: white" class="h5">Total Bonus Paid</h2>
+                            {{-- <h2 class="h6">this Month </h2> --}}
+
+                            <h3  style="color: white" class="mb-1">{{$tBonus}}</h3>
+                        </div>
+                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
+                        <div class="small mt-2">                               
+                           
+                        </div>
+                    
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+
+  
+</div>
+
+@endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- <div class="container">
  @if(Auth::user()->profiled==0)
 
 
@@ -63,11 +236,7 @@
                 </div>
             </div>
         </form>
-        {{-- @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif --}}
+      
 
         
     </div>
@@ -98,5 +267,5 @@
    
     @endif
     
-</div>
+</div> --}}
 @endsection

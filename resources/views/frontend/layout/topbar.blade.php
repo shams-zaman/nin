@@ -58,12 +58,12 @@
             </div>
         </div>
     </div>
-    <div id="menu-jk" class="header-bottom">
+    <div id="menu-jk" style="padding: 0" class="header-bottom">
         <div class="container">
             <div class="row nav-row">
                 <div class="col-lg-3 col-md-12 logo">
                     <a href="index.html">
-                        <img src="{{asset('frontend/assets/images/logo.jpg')}}" alt="">
+                        <img src="{{asset('frontend/assets/images/zaman/ninLogo22.jpg')}}" alt="">
                         <a data-toggle="collapse" data-target="#menu" href="#menu"><i class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
                     </a>
 

@@ -13640,7 +13640,7 @@ button.close {
 }
 
 .bg-quaternary {
-    background-color: #0948B3 !important;
+    background-color:  #347474 !important;
 }
 
 .bg-primary-app {
@@ -13657,6 +13657,10 @@ button.close {
 
 .bg-lighten {
     background-color: #F0F3F6 !important;
+}
+
+.cardborder {
+    border: #00d1b2 solid !important;
 }
 
 .bg-success {

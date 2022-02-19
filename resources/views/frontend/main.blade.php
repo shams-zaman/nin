@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/slider/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/slider/css/owl.theme.default.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/assets/css/style.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 
 <body>
@@ -46,24 +48,24 @@
                         <li>
                             <i class="fab fa-instagram"></i>
                         </li>
-                        <li>
+                        <li >
                             <i class="fab fa-linkedin"></i>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-3 d-none d-md-block col-md-6 btn-bhed">
-                    <button class="btn btn-sm btn-success">Join Us</button>
-                    <button class="btn btn-sm btn-default">Donate</button>
+                    <a href="{{route('login')}}" class="btn btn-sm btn-success">Login</a>
+                    <a href="{{route('register')}}" class="btn btn-sm btn-default">Register</a>
                 </div>
             </div>
         </div>
     </div>
-    <div id="menu-jk" class="header-bottom">
+    <div id="menu-jk" style="margin:0; padding:0;" class="header-bottom">
         <div class="container">
             <div class="row nav-row">
-                <div class="col-lg-3 col-md-12 logo">
-                    <a href="index.html">
-                        <img src="{{asset('frontend/assets/images/logo.jpg')}}" alt="">
+                <div  style="padding: 0;" class="col-lg-3 col-md-12 logo">
+                    <a  style="margin: 0; padding: 0;" href="index.html">
+                        <img style="margin: 0; padding: 0;" src="{{asset('frontend/assets/images/zaman/ninLogo22.jpg')}}" alt="">
                         <a data-toggle="collapse" data-target="#menu" href="#menu"><i class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
                     </a>
 
@@ -103,6 +105,15 @@
             </div>
         </div>
     </div> 
+ 
+    @if (Session::has('message'))
+    <div>
+        {{Session::get('post add')}}
+    </div>
+        
+    @endif
+        
+    
 </header>
   
                  
@@ -166,22 +177,14 @@
         <div  class="row natur-row no-margin w-100">
             <div class="text-part col-md-6">
                 <h2>About Our Charity</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis varius faucibus
-                    ligula non congue. Suspendisse at pretium massa, sit amet
-                    vulputate nibh. Nam posuere eros dolor. Donec vel arcu sagittis, pretium nisl </p>
-                <p> Cras faucibus laoreet nibh, sit amet tincidunt leo mollis in. Etiam eu mauris metus.
-                    Nulla facilisi. Etiam vestibulum,
-                    nisi et convallis elementum, leo orci aliquam metus, id posuere massa neque vitae
-                    arcu.</p>
+               Hi,<br> <p>It's good to have you here, I believe you are curious to know what brings up this idea,
+                Yes, an idea that comes into existence is born for a reason,</p>
+                <br>
+                <p>All Glory to God Almighty.</p>
 
-                <p>Integer vulputate vehicula dolor a eleifend. Duis aliquam condimentum sapien,
-                    eget tempor justo. Aenean porttitor nibh metus, sollicitudin egestas metus posuere et
-                    . Fusce egestas volutpat metus, in sodales sem bibendum porta. Nunc hendrerit nunc sit
-                    amet tellus posuere, at malesuada sem gravida. Integer maximus ultricies augue, at
-                    dapibus elit bibendum consequat. Cras faucibus tellus eleifend, fermentum purus in,
-                    dapibus sapien. Praesent nec ornare risus. Etiam iaculis, ligula vel gravida
-                    vestibulum, urna justo posuere ante,
-                    id pretium massa arcu sed mi. Nunc a sollicitudin sem. Duis tempus </p>
+                <p>I am Adaramaja Joshua the founder and CEO of NIS [New investment scheme} networking enterprise, Here with my family and colleagues who made this a reality, and mostly to my developer who is now my best partner on this I appreciate you all.</p>
+                <p>I have always been purposely driven every day of my life focusing on how to make an impact in the world we live in, One thing I believe and would <a href="{{route('about')}}"> <b> ..more</b></a>
+
             </div>
             <div class="image-part col-md-6">
                 <div class="about-quick-box row">
@@ -221,26 +224,38 @@
  <!-- ################# Mission Vision Start Here #######################--->
   
   <section class="container-fluid mission-vision">
-      <div class="container">
-          <div class="row mission">
-              <div class="col-md-6 mv-det">
-                  <h1>Our Mission</h1>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer neque libero, pulvinar et elementum quis, facilisis eu ante. Mauris non placerat sapien. Pellentesque tempor arcu non odio scelerisque ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam varius eros consequat auctor gravida. Fusce tristique lacus at urna sollicitudin pulvinar. Suspendisse hendrerit ultrices mauris.</p>
-              </div>
-              <div class="col-md-6 mv-img">
-                  <img src="{{asset('frontend/assets/images/misin.jpg')}}" alt="">
-              </div>
-          </div>
-          <div class="row vision">
-              <div class="col-md-6 mv-img">
-                   <img src="{{asset('frontend/assets/images/vision.jpg')}}" alt="">
-              </div>
-              <div class="col-md-6 mv-det">
-                   <h1>Our Vision</h1>
-                   <p>Ut ultricies lacus a rutrum mollis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed porta dolor quis felis pulvinar dignissim. Etiam nisl ligula, ullamcorper non metus vitae, maximus efficitur mi. Vivamus ut ex ullamcorper, scelerisque lacus nec, commodo dui. Proin massa urna, volutpat vel augue eget, iaculis tristique dui.</p>
-              </div>
-          </div>
-      </div>
+    <div class="container">
+        <div class="row mission">
+            <div class="col-md-6 mv-det">
+                <h1>Our Mission</h1>
+                <p>We look forward to making the world a reality for students, youths, and adults, Anyone can join in this great opportunity. <br>
+                    The world can only be better through you and I.
+                    
+                    This program is a great mission of impacting the lives of many students or graduates out there in a very positive way, observing the economic situation and scarcity of jobs out there, it is obvious that there are a lot of people facing a lot of challenges whereby most parents even find it difficult to pay their children fee and other things.
+                    </p>
+            </div>
+            <div class="col-md-6 mv-img">
+                <img src="{{asset('frontend/assets/images/misin.jpg')}}" alt="">
+            </div>
+        </div>
+        <div class="row vision">
+            <div class="col-md-6 mt-2 mv-img">
+                 <img src="{{asset('frontend/assets/images/vision.jpg')}}" alt="">
+            </div>
+            <div style="margin-top: -.2rem" class="col-md-6 mv-det">
+                 <h3 >Our Vision</h3>
+                 <b>Our promise is that this journey would make you </b> <br> <br>
+                <ul style="margin-left: 1rem"><li style="color: rgb(255, 0, 0); margin: .2rem; font-family: "Operator-Mono" "> <b> * Financially free </b></li>
+                <li style="color: rgb(255, 0, 0); margin: .2rem; font-family: "Operator-Mono" "> <b> *Have time for family</b></li>
+                <li style="color: rgb(255, 0, 0); margin: .2rem; font-family: "Operator-Mono" "> <b> *Have time for rest and</b></li>
+                <li style="color: rgb(255, 0, 0); margin: .2rem; font-family: "Operator-Mono" "> <b> *The kind of freedom you want which would lead to achieving your purpose in life.
+                </b>  <a href="{{route('mission')}}">..more</a></li></ul>
+            </div>
+        </div>
+     
+      
+      
+    </div>
   </section>   
    
 
@@ -256,29 +271,22 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="event-box">
                         <img src="{{asset('frontend/assets/images/events/image_08.jpg')}}" alt="">
-                        <h4>Child Education in Africa</h4>
-                        
-                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
-                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p>
-                        <button class="btn btn-success btn-sm">Donate Now</button>
+                        <h4>Start From 1000# Only</h4>
+              
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="event-box">
                         <img src="{{asset('frontend/assets/images/events/image_06.jpg')}}" alt="">
-                        <h4>Child Education in Africa</h4>
-                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
-                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p>
-                        <button class="btn btn-success btn-sm">Donate Now</button>
+                        <h4>Income from the first month!</h4>
+                  
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <div class="event-box">
                         <img src="{{asset('frontend/assets/images/events/image_04.jpg')}}" alt="">
-                        <h4>Child Education in Africa</h4>
-                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
-                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p>
-                        <button class="btn btn-success btn-sm">Donate Now</button>
+                        <h4>Attractive Bonus on cumulative</h4>
+                   
                     </div>
                 </div>
             </div>
@@ -294,30 +302,29 @@
     <div class="doctor-message">
         <div class="inner-lay">
             <div class="container">
-               <div class="row session-title">
-                   <h2>Our Achievemtns in Numbers</h2>
-                   <p>We can talk for a long time about advantages of our Dental clinic before other medical treatment facilities.
-But you can read the following facts in order to make sure of all pluses of our clinic:</p>
-               </div>
-                <div class="row">
-                    <div class="col-sm-3 numb">
-                        <h3>12+</h3>
-                        <span>YEARS OF EXPEREANCE</span>
-                    </div>
-                    <div class="col-sm-3 numb">
-                        <h3>1812+</h3>
-                        <span>HAPPY CHILDRENS</span>
-                    </div>
-                    <div class="col-sm-3 numb">
-                        <h3>52+</h3>
-                        <span>EVENTS</span>
-                    </div>
-                    <div class="col-sm-3 numb">
-                        <h3>48+</h3>
-                        <span>FUNT RAISED</span>
-                    </div>
+                <div class="row session-title">
+                    <h2>Our Bonuses in Numbers</h2>
+                    <p>we provide Attractive Bonus in every month :</p>
                 </div>
-            </div>
+                 <div class="row">
+                     <div class="col-sm-3 numb">
+                         <h3>50%</h3>
+                         <span>*Diamond</span>
+                     </div>
+                     <div class="col-sm-3 numb">
+                         <h3>45%</h3>
+                         <span>10* Director</span>
+                     </div>
+                     <div class="col-sm-3 numb">
+                         <h3>45%</h3>
+                         <span>5* Director</span>
+                     </div>
+                     <div class="col-sm-3 numb">
+                         <h3>40%</h3>
+                         <span>Director</span>
+                     </div>
+                 </div>
+             </div>
 
         </div>
 
@@ -377,7 +384,7 @@ But you can read the following facts in order to make sure of all pluses of our 
     
     <!-- ################# Our Blog Starts Here#######################--->
 
-    <section class="our-blog">
+        {{-- <section class="our-blog">
          	<div class="container">
          		<div class="row session-title">
         			<h2> Our Blog </h2>
@@ -437,7 +444,7 @@ But you can read the following facts in order to make sure of all pluses of our 
         			</div>
         		</div>
          	</div>
-         </section>
+        </section> --}}
           
       <footer class="footer">
         <div class="container">
@@ -452,11 +459,21 @@ But you can read the following facts in order to make sure of all pluses of our 
                 <div class="col-md-4 col-sm-12">
                     <h2>Useful Links</h2>
                     <ul class="list-unstyled link-list">
-                        <li><a ui-sref="about" href="#/about">About us</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="portfolio" href="#/portfolio">Portfolio</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="products" href="#/products">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="gallery" href="#/gallery">Gallery</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="contact" href="#/contact">Contact us</a><i class="fa fa-angle-right"></i></li>
+                        <form action="{{route('message_us')}}" method="POST">
+                        @csrf
+                        <li style="padding: 0">
+                            <input style="background-color: #1e2436; color:white" class="form-control pt-1" type="text" name="name">
+                        </li>
+                        <li  style="padding: 0">
+                            <input style="background-color: #1e2436; color:white" class="form-control pt-1" type="email" required name="contact_email">
+                        </li>
+                        <li  style="padding: 0">
+                            <textarea style="background-color: #1e2436; color:white" class="form-control pt-4" name="text"> </textarea>
+                        </li>
+                        <button  style="background-color: #1e2436; color:white"  type="submit" class="btn">Submit</button>
+                        </form>
+                       
+                       
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-12 map-img">
@@ -474,21 +491,7 @@ But you can read the following facts in order to make sure of all pluses of our 
             </div>
             
             
-            <div class="nav-box row clearfix">
-                <div class="inner col-md-9 clearfix">
-                    <ul class="footer-nav clearfix">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Servies</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-
-                  
-                </div>
-                  <div class="donate-link col-md-3"><a href="donate.html" class="btn btn-primary "><span class="btn-title">Donate Now</span></a></div>
-            </div>
+           
             
         </div>
         
@@ -510,7 +513,7 @@ But you can read the following facts in order to make sure of all pluses of our 
      </div>
           
     
-</body>
+
 
 <script src="{{asset('frontend/assets/js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/popper.min.js')}}"></script>
@@ -518,5 +521,21 @@ But you can read the following facts in order to make sure of all pluses of our 
 <script src="{{asset('frontend/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js')}}"></script>
 <script src="{{asset('frontend/assets/plugins/slider/js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('frontend/assets/js/script.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{!! Toastr::message() !!}
+<script>
 
+
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+              toastr.error('{{ $error }}','Error',{
+                  closeButton:true,
+                  progressBar:true,
+               });
+        @endforeach
+    @endif
+
+</script>
+
+</body>
 </html>

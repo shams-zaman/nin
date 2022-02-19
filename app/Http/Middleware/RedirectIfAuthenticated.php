@@ -26,6 +26,8 @@ class RedirectIfAuthenticated
                 return redirect()->route('admin.dashboard');
             } elseif (Auth::guard($guard)->check() && Auth::user()->role->id == 2) {
                 return redirect()->route('user.dashboard');
+            } elseif (Auth::guard($guard)->check() && Auth::user()->profiled == 0) {
+                return redirect()->route('user.pending');
             } else {
                 return $next($request);
             }

@@ -31,14 +31,15 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>						
-                    <th>Unique_Id</th>
+                    <th>Rank</th>
+                    <th>Month</th>
                     <th>Wallet</th>
                     {{-- <th></th>
                         <th>Total</th>
-                        <th>Status</th>--}}
+                        <th>Status</th>
                         <th>Pv</th>
                         <th>D_Ref</th>
-                        <th>Rank</th>
+                        <th>Rank</th>--}}
 
                     <th>Action</th> 
                 </tr>
@@ -57,11 +58,13 @@
                     <td>
                         <span class="font-weight-normal">         {{ $item->username }}</span>
                     </td>
-                    <td><span class="font-weight-normal">         {{ $item->unique_id }}</span></td>                        
+                    <td><span class="font-weight-normal">         {{ $item->desig }}</span></td>                        
                     <td><span class="font-weight-bold">         {{ $item->wallet }}</span></td>
-                    <td><span class="font-weight-normal">         {{ $item->pv }}</span></td>
+                    {{-- <td><span class="font-weight-normal">         {{ $item->pv }}</span></td>
                     <td><span class="font-weight-normal">         {{ $item->dcount }}</span></td>
-                    <td><span class="font-weight-normal">         {{ $item->desig }}</span></td>
+                    <td><span class="font-weight-normal">         {{ $item->desig }}</span></td> --}}
+
+
                     {{-- <td><span class="font-weight-bold text-warning"></span>         {{ $user->id }}</td> --}}
                     {{-- <td>
                         <livewire:toggle-button
@@ -116,3 +119,4 @@
      
        </div>
 </div>
+

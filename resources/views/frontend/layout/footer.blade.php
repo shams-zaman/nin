@@ -12,11 +12,21 @@
                 <div class="col-md-4 col-sm-12">
                     <h2>Useful Links</h2>
                     <ul class="list-unstyled link-list">
-                        <li><a ui-sref="about" href="#/about">About us</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="portfolio" href="#/portfolio">Portfolio</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="products" href="#/products">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="gallery" href="#/gallery">Gallery</a><i class="fa fa-angle-right"></i></li>
-                        <li><a ui-sref="contact" href="#/contact">Contact us</a><i class="fa fa-angle-right"></i></li>
+                        <form action="{{route('message_us')}}" method="POST">
+                        @csrf
+                        <li style="padding: 0">
+                            <input style="background-color: #1e2436; color:white" class="form-control pt-1" type="text" name="name">
+                        </li>
+                        <li  style="padding: 0">
+                            <input style="background-color: #1e2436; color:white" class="form-control pt-1" type="email" required name="contact_email">
+                        </li>
+                        <li  style="padding: 0">
+                            <textarea style="background-color: #1e2436; color:white" class="form-control pt-4" name="text"> </textarea>
+                        </li>
+                        <button  style="background-color: #1e2436; color:white"  type="submit" class="btn">Submit</button>
+                        </form>
+                       
+                       
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-12 map-img">
@@ -34,21 +44,7 @@
             </div>
             
             
-            <div class="nav-box row clearfix">
-                <div class="inner col-md-9 clearfix">
-                    <ul class="footer-nav clearfix">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Servies</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-
-                  
-                </div>
-                  <div class="donate-link col-md-3"><a href="donate.html" class="btn btn-primary "><span class="btn-title">Donate Now</span></a></div>
-            </div>
+      
             
         </div>
         
@@ -68,15 +64,30 @@
             </div>
 
      </div>
-          
+     <script src="{{asset('frontend/assets/js/jquery-3.2.1.min.js')}}"></script>
+     <script src="{{asset('frontend/assets/js/popper.min.js')}}"></script>
+     <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
+     <script src="{{asset('frontend/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js')}}"></script>
+     <script src="{{asset('frontend/assets/plugins/slider/js/owl.carousel.min.js')}}"></script>
+     <script src="{{asset('frontend/assets/js/script.js')}}"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{!! Toastr::message() !!}
+<script>
+
+
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+              toastr.error('{{ $error }}','Error',{
+                  closeButton:true,
+                  progressBar:true,
+               });
+        @endforeach
+    @endif
+
+</script>
     
 </body>
 
-<script src="{{asset('frontend/assets/js/jquery-3.2.1.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/popper.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('frontend/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js')}}"></script>
-<script src="{{asset('frontend/assets/plugins/slider/js/owl.carousel.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/script.js')}}"></script>
+
 
 </html>

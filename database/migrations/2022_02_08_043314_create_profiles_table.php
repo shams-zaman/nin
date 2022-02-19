@@ -21,6 +21,12 @@ class CreateProfilesTable extends Migration
             $table->string('unique_id')->unique();
             $table->bigInteger('wallet')->default(0);
             $table->integer('pv')->default(0);
+            $table->integer('dir_month_count')->default(0);
+            $table->integer('sl')->default(0);
+            $table->integer('dcount')->default(0);
+            $table->boolean('isActive')->default(0);
+            $table->boolean('status')->default(0);
+            $table->string('desig')->default('starter');
             $table->bigInteger('nin')->unique();
             $table->timestamps();
 

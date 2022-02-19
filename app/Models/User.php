@@ -21,6 +21,8 @@ class User extends Authenticatable
 
         'email',
         'password',
+        'profiled',
+        'isOld'
 
     ];
 
@@ -56,5 +58,9 @@ class User extends Authenticatable
     public function getProfile()
     {
         return $this->hasOne(Profile::class);
+    }
+    public function scopeActive($query)
+    {
+        return $query->where('isActive', 1);
     }
 }

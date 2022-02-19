@@ -35,6 +35,7 @@
           </a>
         </li>
         <hr style="margin-top: 5px">
+        {{-- ??????????????????????????Admin??????????????????????????? --}}
         @if (Request::is('admin*'))
         <li class="nav-item  {{ Request::is('admin/dashboard') ? 'active' : '' }} ">
           <a href="{{ route('admin.dashboard') }}" class="nav-link">
@@ -46,7 +47,58 @@
         <li class="nav-item  {{ Request::is('admin/all_users') ? 'active' : '' }} ">
           <a href="{{ route('admin.all_users') }}" class="nav-link">
               <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
-              <span  style="font-size: .9rem;">Users</span>
+              <span  class="font-weight-bold" style="font-size: .9rem;">Users</span>
+          </a>
+        </li>
+        <li class="nav-item  {{ Request::is('admin/user-requests') ? 'active' : '' }} ">
+          <a href="{{ route('admin.user_requests_show') }}" class="nav-link">
+              <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
+              <span  style="font-size: .9rem;">New User Req..</span>
+          </a>
+        </li>
+        <li class="nav-item  {{ Request::is('admin/all-transictions') ? 'active' : '' }} ">
+          <a href="{{ route('admin.all_transictions') }}" class="nav-link">
+              <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
+              <span  style="font-size: .9rem;">Transictions</span>
+          </a>
+        </li>
+        <li class="nav-item  {{ Request::is('admin/bonus') ? 'active' : '' }} ">
+          <a href="{{ route('admin.bonus') }}" class="nav-link">
+              <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
+              <span  style="font-size: .9rem;">Bonus</span>
+          </a>
+        </li>
+        <li class="nav-item  {{ Request::is('admin/payment') ? 'active' : '' }} ">
+          <a href="{{ route('admin.subscription') }}" class="nav-link">
+              <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
+              <span  style="font-size: .9rem;">Take Payment</span>
+          </a>
+        </li>
+        <li class="nav-item  {{ Request::is('admin/contact') ? 'active' : '' }} ">
+          <a href="{{ route('admin.contact') }}" class="nav-link">
+              <span class="sidebar-icon"><span class="fas fa-hand-holding-usd"></span></span>
+              <span  style="font-size: .9rem;">Contact-Msg:</span>
+          </a>
+        </li>
+        @elseif (Request::is('user*'))
+
+        <li class="nav-item  {{ Request::is('user/dashboard') ? 'active' : '' }} ">
+          <a href="{{ route('user.dashboard') }}" class="nav-link">
+            <span class="sidebar-icon"><span class="fas fa-chart-pie"></span></span>
+            <span class="" style="font-size: .9rem;">Dashboard</span>
+          </a>
+        </li>
+     
+        <li class="nav-item  {{ Request::is('user/mydownlines') ? 'active' : '' }} ">
+          <a href="{{ route('user.mydownlines') }}" class="nav-link">
+            <span class="sidebar-icon"><span class="fas fa-chart-pie"></span></span>
+            <span class="" style="font-size: .9rem;">Downlines</span>
+          </a>
+        </li>
+        <li class="nav-item  {{ Request::is('user/mytransictions') ? 'active' : '' }} ">
+          <a href="{{ route('user.mytransictions') }}" class="nav-link">
+            <span class="sidebar-icon"><span class="fas fa-chart-pie"></span></span>
+            <span class="" style="font-size: .9rem;">Transictions</span>
           </a>
         </li>
         {{-- <li class="nav-item ">

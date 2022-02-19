@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->integer('role_id')->default(2);
             $table->boolean('status')->default(0);
             $table->boolean('profiled')->default(0);
+            $table->boolean('isOld')->default(0);
 
 
             $table->string('email')->nullable();

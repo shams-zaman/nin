@@ -37,6 +37,8 @@
 <link type="text/css" href="{{ asset('backend/css/volt.css') }}" rel="stylesheet">
 
 <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+{{-- the toaster --}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 @livewireStyles
 </head>
@@ -71,6 +73,8 @@
 {{-- @@include('./_scripts.html', {
     "path": "../.."
 }) --}}
+<script src="{{ asset('backend/assets/js/jquery-3.6.0.min.js')}}"></script>
+
 
     <!-- Core -->
 <script src="{{ asset('backend/vendor/popper.js/dist/umd/popper.min.js')}}"></script>
@@ -109,7 +113,22 @@
 
 <!-- Volt JS -->
 <script src="{{ asset('backend/assets/js/volt.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{!! Toastr::message() !!}
+<script>
 
+
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+              toastr.error('{{ $error }}','Error',{
+                  closeButton:true,
+                  progressBar:true,
+               });
+        @endforeach
+    @endif
+
+</script>
+@stack('head')
   @livewireScripts  
 </body>
 

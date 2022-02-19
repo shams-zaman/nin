@@ -22,30 +22,40 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
 
             "role_id" => 1,
+
+            'profiled' => 1,
             'email' => 'admin@gmail.com',
             'password' => Hash::make('dennison'),
         ]);
         DB::table('users')->insert([
 
             "role_id" => 1,
+
+            'profiled' => 1,
             'email' => 'admin2@gmail.com',
             'password' => Hash::make('dennison'),
         ]);
         DB::table('users')->insert([
 
             "role_id" => 1,
+
+            'profiled' => 1,
             'email' => 'admin3@gmail.com',
             'password' => Hash::make('dennison'),
         ]);
         DB::table('users')->insert([
 
             "role_id" => 1,
+
+            'profiled' => 1,
             'email' => 'admin4@gmail.com',
             'password' => Hash::make('dennison'),
         ]);
         DB::table('users')->insert([
 
             "role_id" => 1,
+
+            'profiled' => 1,
             'email' => 'admin5@gmail.com',
             'password' => Hash::make('dennison'),
         ]);

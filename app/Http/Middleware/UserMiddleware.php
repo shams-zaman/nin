@@ -17,8 +17,10 @@ class UserMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::check() && Auth::user()->role->id == 2) {
+        if (Auth::check() && Auth::user()->role->id == 2 && Auth::user()->profiled == 1) {
             return $next($request);
+        } elseif (Auth::check() && Auth::user()->role->id == 2 && Auth::user()->profiled == 0) {
+            return redirect()->route('user.pending');
         } else {
             return redirect()->route('login');
         }
