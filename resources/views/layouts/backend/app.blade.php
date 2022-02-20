@@ -25,7 +25,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!-- Primary Meta Tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Volt - Free Bootstrap 5 Dashboard</title>
+<title>NIS(National Independence Scheme)</title>
 
 <!-- Fontawesome -->
 <link type="text/css" href="{{ asset('backend/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
