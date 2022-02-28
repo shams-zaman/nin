@@ -27,7 +27,10 @@ class DashboardController extends Controller
 
         $aMyDowns = $myProfile->dir_month_count;
         $wallet = $myProfile->wallet;
+        $pv = $myProfile->pv;
         $rank = $myProfile->desig;
+        $myUniqueId = $myProfile->unique_id;
+        $mybonus = $myProfile->bonus;
 
         //
 
@@ -47,7 +50,7 @@ class DashboardController extends Controller
 
 
 
-        return view('user.dashboard', compact('tMyDowns', 'tBonus', 'rank', 'wallet', 'aMyDowns', 'prevBonus'));
+        return view('user.dashboard', compact('tMyDowns', 'mybonus', 'pv', 'myUniqueId', 'tBonus', 'rank', 'wallet', 'aMyDowns', 'prevBonus'));
     }
     public function mytransictions()
     {

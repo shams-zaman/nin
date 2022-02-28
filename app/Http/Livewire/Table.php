@@ -18,8 +18,9 @@ class Table extends Component
     public function render()
     {
         $items = Profile::query()
+            // ->where('id', '>', 4)
             ->search($this->search)
-            ->paginate(9);
+            ->paginate(10);
         return view('livewire.table', ['items' => $items]);
     }
     public function updatingSearch()

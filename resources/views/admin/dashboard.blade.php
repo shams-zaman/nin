@@ -57,7 +57,7 @@
               
                     <div class=" col-12 col-xl-7 px-xl-0">
                         <div class=" d-sm-block">
-                            <h2 style="color: white" class="h5">Dective Users </h2>
+                            <h2 style="color: white" class="h5">Inactive Users </h2>
                             {{-- <h2 class="h6">this Month </h2> --}}
 
                             <h3 style="color: white" class="mb-1">{{$deactivates}}</h3>

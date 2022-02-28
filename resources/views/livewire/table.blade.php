@@ -4,7 +4,9 @@
             <div class="col col-md-6 col-lg-3 offset-lg-3 col-xl-4">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon2"><span class="fas fa-search"></span></span>
-                    <input wire:model.debounce.300ms="search" type="text" class="form-control" id="exampleInputIconLeft" placeholder="Search Users" aria-label="Search" aria-describedby="basic-addon2">
+                    <input wire:model.debounce.300ms="search" type="text" class="form-control"
+                        id="exampleInputIconLeft" placeholder="Search Users" aria-label="Search"
+                        aria-describedby="basic-addon2">
                 </div>
             </div>
             {{-- <div class="col-4 col-md-2 col-xl-1 pl-md-0 text-right">
@@ -24,46 +26,45 @@
                 </div>
             </div> --}}
         </div>
-       </div>
-       <div class="card card-body border-light shadow-sm table-wrapper table-responsive pt-0">
+    </div>
+    <div class="card card-body border-light shadow-sm table-wrapper table-responsive pt-0">
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>						
+                    <th>Name</th>
                     <th>Unique_Id</th>
                     <th>Wallet</th>
                     {{-- <th></th>
                         <th>Total</th>
-                        <th>Status</th>--}}
-                        <th>Pv</th>
-                        <th>D_Ref</th>
-                        <th>Rank</th>
+                        <th>Status</th> --}}
+                    <th>Pv</th>
+                    <th>D_Ref</th>
+                    <th>Rank</th>
 
-                    <th>Action</th> 
+                    <th>Bonus</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Item -->
                 @foreach ($items as $item)
-                    
-               
-                <tr>
-                    <td>
-                        <a href="../invoice.html" class="font-weight-bold">
-                      {{ $item->id }}
-                        </a>
-                    </td>
-                    <td>
-                        <span class="font-weight-normal">         {{ $item->username }}</span>
-                    </td>
-                    <td><span class="font-weight-normal">         {{ $item->unique_id }}</span></td>                        
-                    <td><span class="font-weight-bold">         {{ $item->wallet }}</span></td>
-                    <td><span class="font-weight-normal">         {{ $item->pv }}</span></td>
-                    <td><span class="font-weight-normal">         {{ $item->dcount }}</span></td>
-                    <td><span class="font-weight-normal">         {{ $item->desig }}</span></td>
-                    {{-- <td><span class="font-weight-bold text-warning"></span>         {{ $user->id }}</td> --}}
-                    {{-- <td>
+                    <tr>
+                        <td>
+                            <a href="../invoice.html" class="font-weight-bold">
+                                {{ $item->id }}
+                            </a>
+                        </td>
+                        <td>
+                            <span class="font-weight-normal"> {{ $item->username }}</span>
+                        </td>
+                        <td><span class="font-weight-normal"> {{ $item->unique_id }}</span></td>
+                        <td><span class="font-weight-bold"> {{ $item->wallet }}</span></td>
+                        <td><span class="font-weight-normal"> {{ $item->pv }}</span></td>
+                        <td><span class="font-weight-normal"> {{ $item->dcount }}</span></td>
+                        <td><span class="font-weight-normal"> {{ $item->desig }}</span></td>
+                        <td><span class="font-weight-normal"> {{ $item->bonus }}</span></td>
+                        {{-- <td><span class="font-weight-bold text-warning"></span>         {{ $user->id }}</td> --}}
+                        {{-- <td>
                         <livewire:toggle-button
                         :model="$item"
                         field="status"
@@ -77,8 +78,8 @@
                         </div> --}}
                         {{-- ==========Dont Uncomment End============ --}}
 
-                 
-                    <td>
+                        {{-- buttons --}}
+                        {{-- <td>
                         <div class="btn-group">
                             <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="icon icon-sm">
@@ -92,27 +93,30 @@
                                 <a class="dropdown-item text-danger" href="#"><span class="fas fa-trash-alt mr-2"></span>Remove</a>
                             </div>
                         </div>
-                    </td>
-                </tr>
+                    </td> --}}
+                        {{-- buttons --}}
+
+                    </tr>
                 @endforeach
                 <!-- Item -->
-               
+
                 <!-- Item -->
-                                            
+
             </tbody>
         </table>
-     
+
         <div>
             {{-- <p>
                 Showing {{ $items->firstItem() }} to {{ $items->lastItem() }} out of {{ $items->total() }} items.
             </p> --}}
             <p class="col-lg-6 col-md-6">
-                <div class="font-weight-bold small offset-lg-10">Showing <b>{{ $items->firstItem() }}</b> to <b>{{ $items->lastItem() }} </b> out of <b>{{ $items->total() }} </b> entries</div>
-                {{ $items->links('pagination_links') }}
-               
+            <div class="font-weight-bold small offset-lg-10">Showing <b>{{ $items->firstItem() }}</b> to
+                <b>{{ $items->lastItem() }} </b> out of <b>{{ $items->total() }} </b> entries</div>
+            {{ $items->links('pagination_links') }}
+
             </p>
-          
+
         </div>
-     
-       </div>
+
+    </div>
 </div>

@@ -1,181 +1,313 @@
 @extends('layouts.backend.app')
 
 @section('content')
-@if(Auth::user()->getProfile->isActive==0)
-<h1>
-    You havn't paid the monthly premium yet;
-    </h1> 
+    @if (Auth::user()->getProfile->isActive == 0)
+        <h1>
+            You havn't paid the monthly premium yet;
+        </h1>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex align-items-center">
 
 
-@else
-<div class="row justify-content-md-center">
+                            <div class="align-items-center">
+                                <h2 style="color: white" class="h5">My Ref. Code</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
 
-    
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <div class="card border-light bg-dark  shadow-sm">
-            <div class="card-body">
-                <div class="row d-block d-xl-flex align-items-center">
-                
-                 
-                        <div class="align-items-center">
-                            <h2 style="color: white" class="h5">Total Downline:</h2>
-                            {{-- <h2 class="h6">this Month </h2> --}}
+                                <h3 id="codena" style="color: white" class="mb-1">{{ $myUniqueId }}</h3>
+                            </div>
+                            <small style="color: white"> <a onclick="alna('#codena')" style="color: white"
+                                    class="bg-primary "> <u>
+                                        <b>Click</b> here to copy</u></a> <span class="icon icon-small"><span
+                                        class="fas fa-globe-europe"></span></span> </small>
+                            <div class="small mt-2">
 
-                            <h3  style="color: white" class="mb-1">{{$tMyDowns}}</h3>
+                            </div>
+
+
                         </div>
-                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
-                        <div class="small mt-2">                               
-                           
-                        </div>
-                    
-                        
+                    </div>
                 </div>
             </div>
+            <script>
+                function alna(element) {
+                    var $temp = $("<input>");
+                    $("body").append($temp);
+                    $temp.val($(element).text()).select();
+                    document.execCommand("copy");
+                    $temp.remove();
+                    alert('Copied!')
+                }
+            </script>
         </div>
-    </div>
+    @else
+        <div class="row ">
 
 
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <div class="card border-light bg-dark  shadow-sm">
-            <div class="card-body">
-                <div class="row d-block d-xl-flex align-items-center">
-                
-                 
-                        <div class="align-items-center">
-                            <h2 style="color: white" class="h5">Active Downline:</h2>
-                            {{-- <h2 class="h6">this Month </h2> --}}
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex align-items-center">
 
-                            <h3  style="color: white" class="mb-1">{{$aMyDowns}}</h3>
+
+                            <div class="align-items-center">
+                                <h2 style="color: white" class="h5">Total Downline:</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
+
+                                <h3 style="color: white" class="mb-1">{{ $tMyDowns }}</h3>
+                            </div>
+                            <small>This Month <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span>
+                            </small>
+                            <div class="small mt-2">
+
+                            </div>
+
+
                         </div>
-                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
-                        <div class="small mt-2">                               
-                           
-                        </div>
-                    
-                        
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
 
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex align-items-center">
 
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <div class="card border-light bg-dark  shadow-sm">
-            <div class="card-body">
-                <div class="row d-block d-xl-flex align-items-center">
-                
-                 
-                        <div class="align-items-center">
-                            <h2 style="color: white" class="h5">Wallet</h2>
-                            {{-- <h2 class="h6">this Month </h2> --}}
 
-                            <h3  style="color: white" class="mb-1">{{$wallet}}</h3>
+                            <div class="align-items-center">
+                                <h2 style="color: white" class="h5">Active Downline:</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
+
+                                <h3 style="color: white" class="mb-1">{{ $aMyDowns }}</h3>
+                            </div>
+                            <small>This Month <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span>
+                            </small>
+                            <div class="small mt-2">
+
+                            </div>
+
+
                         </div>
-                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
-                        <div class="small mt-2">                               
-                           
-                        </div>
-                    
-                        
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <div class="card border-light bg-dark  shadow-sm">
-            <div class="card-body">
-                <div class="row d-block d-xl-flex align-items-center">
-                
-                 
-                        <div class="align-items-center">
-                            <h2 style="color: white" class="h5">Rank</h2>
-                            {{-- <h2 class="h6">this Month </h2> --}}
 
-                            <h3  style="color: white" class="mb-1">{{$rank}}</h3>
+
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex align-items-center">
+
+
+                            <div class="align-items-center">
+                                <h2 style="color: white" class="h5">Wallet</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
+
+                                <h3 style="color: white" class="mb-1">{{ $wallet }}</h3>
+                            </div>
+                            <small>This Month <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span>
+                            </small>
+                            <div class="small mt-2">
+
+                            </div>
+
+
                         </div>
-                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
-                        <div class="small mt-2">                               
-                           
-                        </div>
-                    
-                        
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <div class="card border-light bg-dark  shadow-sm">
-            <div class="card-body">
-                <div class="row d-block d-xl-flex align-items-center">
-                
-                 
-                        <div class="align-items-center">
-                            <h2 style="color: white" class="h5">Previous Bonus</h2>
-                            {{-- <h2 class="h6">this Month </h2> --}}
-
-                            <h3  style="color: white" class="mb-1">{{$prevBonus}}</h3>
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex ">
+                            <div class="">
+                                <h2 style="color: white" class="h5">Bonus</h2>
+                                @if ($mybonus == 0)
+                                    <h3 style="color: white" class="mb-1">Not Eligible Yet! </h3>
+                                @else
+                                    <h3 style="color: white" class="mb-1">{{ $mybonus }}</h3>
+                                @endif
+                            </div>
+                            <small style="color: white">This Month <span class="icon icon-small">
+                                    <span class="fas fa-globe-europe"></span></span>
+                            </small>
+                            <div class="small mt-2">
+                            </div>
                         </div>
-                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
-                        <div class="small mt-2">                               
-                           
-                        </div>
-                    
-                        
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
 
-    <div class="col-12 col-sm-6 col-xl-4 mb-4">
-        <div class="card border-light bg-dark  shadow-sm">
-            <div class="card-body">
-                <div class="row d-block d-xl-flex align-items-center">
-                
-                 
-                        <div class="align-items-center">
-                            <h2 style="color: white" class="h5">Total Bonus Paid</h2>
-                            {{-- <h2 class="h6">this Month </h2> --}}
 
-                            <h3  style="color: white" class="mb-1">{{$tBonus}}</h3>
+
+
+
+
+
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex align-items-center">
+
+
+                            <div class="align-items-center">
+                                <h2 style="color: white" class="h5">Rank</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
+
+                                <h3 style="color: white" class="mb-1">{{ $rank }}</h3>
+                            </div>
+                            <small>This Month <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span>
+                            </small>
+                            <div class="small mt-2">
+
+                            </div>
+
+
                         </div>
-                        <small>This Month  <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small> 
-                        <div class="small mt-2">                               
-                           
-                        </div>
-                    
-                        
+                    </div>
                 </div>
             </div>
+
+
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex align-items-center">
+
+
+                            <div class="align-items-center">
+                                <h2 style="color: white" class="h5">Previous Revenue</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
+
+                                <h3 style="color: white" class="mb-1">{{ $prevBonus }}</h3>
+                            </div>
+                            <small>This Month <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span>
+                            </small>
+                            <div class="small mt-2">
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex align-items-center">
+
+
+                            <div class="align-items-center">
+                                <h2 style="color: white" class="h5">Total Revenue Paid</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
+
+                                <h3 style="color: white" class="mb-1">{{ $tBonus }}</h3>
+                            </div>
+                            <small>This Month <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span>
+                            </small>
+                            <div class="small mt-2">
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex ">
+
+
+                            <div class="">
+                                <h2 style="color: white" class="h5">total Points</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
+
+                                <h3 style="color: white" class="mb-1">{{ $pv }}</h3>
+                            </div>
+                            <small>This Month <span class="icon icon-small"><span class="fas fa-globe-europe"></span></span>
+                            </small>
+                            <div class="small mt-2">
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-4 mb-4">
+                <div class="card border-light bg-dark  shadow-sm">
+                    <div class="card-body">
+                        <div class="row d-block d-xl-flex align-items-center">
+
+
+                            <div class="align-items-center">
+                                <h2 style="color: white" class="h5">My Ref. Code</h2>
+                                {{-- <h2 class="h6">this Month </h2> --}}
+
+                                <h3 id="code" style="color: white" class="mb-1">{{ $myUniqueId }}</h3>
+                            </div>
+                            <small style="color: white"> <a onclick="al('#code')" style="color: white"
+                                    class="bg-primary "> <u> <b>Click</b> here to copy</u></a> <span
+                                    class="icon icon-small"><span class="fas fa-globe-europe"></span></span> </small>
+                            <div class="small mt-2">
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
         </div>
-    </div>
-  
+        {{-- @push('name')
 
-
-  
-</div>
-
-@endif
-
-
-
-
-
-
-
-
-
+        @endpush --}}
+        <script>
+            function al(element) {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val($(element).text()).select();
+                document.execCommand("copy");
+                $temp.remove();
+                alert('Copied!')
+            }
+        </script>
+    @endif
 
 
 
 
 
-{{-- <div class="container">
- @if(Auth::user()->profiled==0)
+
+
+
+
+
+
+
+
+
+    {{-- <div class="container">
+ @if (Auth::user()->profiled == 0)
 
 
     <div class="row justify-content-center">
@@ -213,7 +345,7 @@
                     @enderror
                 </div>
             </div>
-    
+
 
             <div class="form-group row">
                 <label for="referral_id" class="col-md-4 col-form-label text-md-right">{{ __('Referral ID NO:') }}</label>
@@ -236,9 +368,9 @@
                 </div>
             </div>
         </form>
-      
 
-        
+
+
     </div>
             </div>
         </div>
@@ -253,7 +385,7 @@
         {{auth::user()->getProfile->wallet}}
     </div>
 </div>
-     
+
    </div>
    <div class="card" style="width: 25%">
     <div class="card-header">
@@ -264,8 +396,8 @@
         </div>
     </div>
    </div>
-   
+
     @endif
-    
+
 </div> --}}
 @endsection

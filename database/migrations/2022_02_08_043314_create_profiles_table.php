@@ -20,6 +20,7 @@ class CreateProfilesTable extends Migration
             $table->string('referral_id');
             $table->string('unique_id')->unique();
             $table->bigInteger('wallet')->default(0);
+            $table->bigInteger('bonus')->default(0);
             $table->integer('pv')->default(0);
             $table->integer('dir_month_count')->default(0);
             $table->integer('sl')->default(0);
